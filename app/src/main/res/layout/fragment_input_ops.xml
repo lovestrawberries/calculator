@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/inputopsfrag"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context="com.seb.calculator.InputOpsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            style="@style/ButtonOperation"
+            android:id="@+id/btn_inputopsfrag_divide"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:text="/"
+            />
+
+        <Button
+            style="@style/ButtonOperation"
+            android:id="@+id/btn_inputopsfrag_multiply"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:text="*"
+            />
+
+        <Button
+            style="@style/ButtonOperation"
+            android:id="@+id/btn_inputopsfrag_subtract"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:text="-"
+            />
+
+        <Button
+            style="@style/ButtonOperation"
+            android:id="@+id/btn_inputopsfrag_add"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:text="+"
+            />
+
+        <Button
+            android:id="@+id/btn_inputopsfrag_percent"
+            style="@style/ButtonOperation"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:text="%" />
+
+        <Button
+            android:id="@+id/btn_inputopsfrag_square_root"
+            style="@style/ButtonOperation"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:text="√" />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,38 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground"
+    android:elevation="8dp"
+    android:paddingBottom="24dp"
+    android:paddingTop="24dp"
+    tools:context="com.seb.calculator.DisplayFragment"
+    android:backgroundTint="@color/colorWhite">
+
+    <ImageButton
+        style="@style/ImageButtonDisplay"
+        android:id="@+id/img_btn_delete"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:src="@drawable/ic_keyboard_arrow_left_black_36dp"/>
+
+    <HorizontalScrollView
+        style="@style/ScrollViewDisplay"
+        android:id="@+id/scv_display"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_toEndOf="@id/img_btn_delete"
+        android:layout_toRightOf="@id/img_btn_delete">
+
+        <TextView
+            style="@style/TextViewDisplay"
+            android:id="@+id/tv_display"
+            android:layout_width="wrap_content"
+            android:layout_height="72dp"
+            android:layout_gravity="end"
+            tools:text="123 * 0.94"
+            />
+
+    </HorizontalScrollView>
+
+</RelativeLayout>
