@@ -14,14 +14,8 @@ import butterknife.OnClick;
 import butterknife.OnLongClick;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class DisplayFragment extends Fragment implements CalculatorContract.PublishToView {
 
-    /**
-     * Interface transmitter to CalculatorPresenter
-     */
     private CalculatorContract.ForwardDisplayInteractionToPresenter forwardDisplayInteractionToPresenter;
 
     public void setPresenter(CalculatorContract.ForwardDisplayInteractionToPresenter forwardInteraction) {
@@ -33,17 +27,11 @@ public class DisplayFragment extends Fragment implements CalculatorContract.Publ
 
     @OnClick(R.id.img_btn_delete)
     public void onDeleteClick() {
-        /**
-         * Interface transmitter to CalculatorPresenter
-         */
         forwardDisplayInteractionToPresenter.onDeleteClickInterfaceMethod();
     }
 
     @OnLongClick(R.id.img_btn_delete)
     public boolean onClearClick() {
-        /**
-         * Interface transmitter to CalculatorPresenter
-         */
         forwardDisplayInteractionToPresenter.onClearClickInterfaceMethod();
 
         return true;
@@ -69,17 +57,13 @@ public class DisplayFragment extends Fragment implements CalculatorContract.Publ
         return view;
     }
 
-    /**
-     * Interface receiver from CalculatorPresenter
-     * @param result
-     */
     @Override
-    public void showResultInterfaceMethod(String result) {
+    public void showResult(String result) {
         display.setText(result);
     }
 
     @Override
-    public void showErrorInterfaceMethod(String message) {
+    public void showError(String message) {
         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
     }
 }

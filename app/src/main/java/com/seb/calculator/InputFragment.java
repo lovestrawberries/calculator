@@ -16,9 +16,6 @@ import butterknife.OnClick;
  */
 public class InputFragment extends Fragment {
 
-    /**
-     * Interface transmitter to CalculatorPresenter
-     */
     private CalculatorContract.ForwardInputInteractionToPresenter forwardInputInteraction;
 
     public void setPresenter (CalculatorContract.ForwardInputInteractionToPresenter forwardInputInteraction) {
@@ -30,9 +27,6 @@ public class InputFragment extends Fragment {
             R.id.btn_inputfrag_no_seven, R.id.btn_inputfrag_no_eight, R.id.btn_inputfrag_no_nine,
             R.id.btn_inputfrag_no_zero})
     public void onNumberClick(Button view) {
-        /**
-         * Interface transmitter to Presenter
-         */
         forwardInputInteraction.onNumberClickInterfaceMethod(Integer.parseInt(view.getText().toString()));
     }
 

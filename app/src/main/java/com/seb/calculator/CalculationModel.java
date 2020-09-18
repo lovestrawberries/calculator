@@ -3,9 +3,6 @@ package com.seb.calculator;
 import org.javia.arity.Symbols;
 import org.javia.arity.SyntaxException;
 
-/**
- * Created by sebastianuchwat on 09/03/2018.
- */
 
 public class CalculationModel {
 
@@ -13,18 +10,10 @@ public class CalculationModel {
     private CalculationResult calculationResult;
     private static String currentExpression;
 
-    /**
-     * Interface transmitter to CalculatorPresenter
-     */
     interface CalculationResult {
         void onExpressionChangedLocalInterfaceMethod(String result, boolean isSuccessful);
     }
 
-    /**
-     * This setter doesn't care what parameter is passed as long as it implements
-     * CalculationResult interface
-     * @param calculationResult
-     */
     public void setCalculationResultListener (CalculationResult calculationResult) {
         this.calculationResult = calculationResult;
         currentExpression = "";
@@ -34,38 +23,21 @@ public class CalculationModel {
         this.symbols = new Symbols();
     }
 
-    /**
-     * Delete single char from currentExpression, unless empty
-     * "" - invalid
-     * 543 - valid
-     * 45*55 - valid
-     *
-     */
+
     public void deleteChar() {
         if (currentExpression.length() > 0) {
             currentExpression = currentExpression.substring(0, currentExpression.length() -1);
-            /**
-             * Interface transmitter to CalculatorPresenter
-             */
+
             calculationResult.onExpressionChangedLocalInterfaceMethod(currentExpression, true);
         } else {
-            /**
-             * Interface transmitter to CalculatorPresenter
-             */
             calculationResult.onExpressionChangedLocalInterfaceMethod("Invalid input", false);
         }
     }
 
-    /**
-     * Delete entire expression unless empty
-     * "" - invalid
-     */
     public void deleteExpression() {
         if (currentExpression.length() > 0) {
             currentExpression = "";
-            /**
-             * Interface transmitter to CalculatorPresenter
-             */
+
             calculationResult.onExpressionChangedLocalInterfaceMethod(currentExpression, true);
         } else {
             return;

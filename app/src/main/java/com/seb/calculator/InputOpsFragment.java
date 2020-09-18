@@ -8,14 +8,9 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.ScrollView;
-
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * Created by sebastianuchwat on 11/03/2018.
- */
 
 public class InputOpsFragment extends Fragment {
 
@@ -23,9 +18,6 @@ public class InputOpsFragment extends Fragment {
     private Button mButton;
     private int mYposition;
 
-    /**
-     * Interface transmitter to Presenter
-     */
     CalculatorContract.ForwardInputInteractionToPresenter forwardInputInteractionToPresenter;
 
     public void setForwardInputInteractionToPresenter(

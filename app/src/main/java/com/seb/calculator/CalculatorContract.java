@@ -1,25 +1,16 @@
 package com.seb.calculator;
 
-/**
- * Created by sebastianuchwat on 06/03/2018.
- */
 
 public interface CalculatorContract {
 
-    /**
-     * Channel CalculatorPresenter -> DisplayFragment
-     */
     interface PublishToView {
 
-        void showResultInterfaceMethod(String result);
+        void showResult(String result);
 
-        void showErrorInterfaceMethod(String message);
+        void showError(String message);
     }
 
 
-    /**
-     * Channel DisplayFragment -> CalculatorPresenter
-     */
     interface ForwardDisplayInteractionToPresenter {
 
         void onDeleteClickInterfaceMethod();
@@ -28,9 +19,6 @@ public interface CalculatorContract {
 
     }
 
-    /**
-     * Channel InputFragment -> CalculatorPresenter
-     */
     interface ForwardInputInteractionToPresenter {
 
         void onNumberClickInterfaceMethod(int number);
